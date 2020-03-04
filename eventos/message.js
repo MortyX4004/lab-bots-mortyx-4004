@@ -1,6 +1,8 @@
 const Database = require("../Data/database.js")
+const { MessageEmbed } = require('discord.js');
 
 module.exports = async (client, message) => {
+
   if(message.author.bot) return;
   if(message.channel.type === "dm") return client.channels.get("681798419907739674").send(` ${message.author.username} Falou pro Bot: ${message.content}`);       
   Database.Membros.findOne({membroid: message.author.id}, function(erro, dados) {   
@@ -70,7 +72,7 @@ module.exports = async (client, message) => {
   }
   else
   {
-  const canal = client.channels.get('682386314821369871')
+  const canal = client.channels.cache.get('682386314821369871')
   if(arquivocmd) return message.channel.send(`Você precisa está no ${canal} para poder executar os comandos do bot.`)
   .then(msg => msg.delete( 5 * 1000))
   }

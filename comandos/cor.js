@@ -1,4 +1,6 @@
 const Discord = require('discord.js')
+const { MessageEmbed } = require('discord.js');
+
 let cores = [
     {"nome": "azul","codigo":"#2E64FE","cargo": "Azul"},
     {"nome":"vermelho","codigo":"#FF0000","cargo":"Vermelho"},
@@ -19,9 +21,9 @@ if(args[0] === "random"){
       let random = Math.floor(Math.random() * cores.length);
       let rand =  cores[random];  
 
-      let rol = message.guild.roles.map(async m => {
+      let rol = message.guild.roles.cache.map(async m => {
       if(m.name.toLowerCase() == rand.nome){   
-      await message.member.addRole(m.id)      
+      await message.member.roles.add(m.id)      
       message.reply(`Sua cor foi Atualizada para ${m}`)
       }
       })
@@ -29,7 +31,7 @@ if(args[0] === "random"){
 }    
 if(!args[0]) 
 {
-const color = new Discord.RichEmbed()
+const color = new MessageEmbed()
 color.setTitle("Cores Disponiveis")
 cores.map(async x =>{
 array.push(x.nome)
@@ -38,25 +40,25 @@ color.setDescription(`${array}`)
 message.reply(color)
 }else{
 cores.map(async x =>{
-message.member.roles.some(role => {
+message.member.roles.cache.some(role => {
 if(role.name == x.cargo)
 {
-message.member.removeRole(role) 
+message.member.roles.remove(role) 
 }
 })
 setTimeout(async function(){
 if(args[0].toLowerCase() == x.nome) {
   
-let rol = message.guild.roles.map(async m => {
+let rol = message.guild.roles.cache.map(async m => {
   if(m.name == x.cargo){
-    message.member.addRole(m.id)
+    message.member.roles.add(m.id)
     message.reply(`Cor setada com Sucesso!`)
     }
 })
 let arg = args[0].toLowerCase();
-if(message.guild.roles.map(b => b.name == arg)) return;
+if(message.guild.roles.cache.map(b => b.name == arg)) return;
 message.guild.createRole({name: x.cargo,color: x.codigo}).then(async car =>{
-await message.member.addRole(car.id)
+await message.member.roles.add(car.id)
 message.reply(`Cor setada com Sucesso!`)
 })
 }

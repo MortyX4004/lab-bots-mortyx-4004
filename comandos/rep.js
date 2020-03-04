@@ -1,4 +1,5 @@
 const Discord = require('discord.js')
+const { MessageEmbed } = require('discord.js');
 
 exports.run = async (client, message, args , Database) => {
 if(!args[0]) return message.reply("Mencione um Membro")

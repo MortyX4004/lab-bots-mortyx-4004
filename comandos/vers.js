@@ -1,17 +1,18 @@
 const Discord = require('discord.js')
+const { MessageEmbed } = require('discord.js');
 
 exports.run = async (client, message, args, Database) => {
 let texto = ["665200472596152341","586164335592865792","336905723621670914","505878433998569472"]
 if(texto.indexOf("<") > -1)
 {}else{
-let embed = new Discord.RichEmbed()
+let embed = new MessageEmbed()
 embed.setTitle("Sugestões Salvas")
 embed.setColor("BLUE")
 message.channel.send("<a:loading:681929901586120746> Calculando Dados!").then(msg => setTimeout(function(){  
 msg.edit("<a:loading:681929901586120746> Processando Dados")
 msg.delete(3000)
 },3000)) 
-let loop = message.guild.members.forEach(x =>{
+let loop = message.guild.members.cache.forEach(x =>{
 Database.Sugestao.findOne({indice: x.id}, function(erro, dados) {   
 if(dados)
 {    

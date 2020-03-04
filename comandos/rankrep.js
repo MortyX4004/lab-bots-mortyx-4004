@@ -1,22 +1,23 @@
 const Discord = require('discord.js')
+const { MessageEmbed } = require('discord.js');
 
 exports.run = async (client, message, args , Database) => { 
 message.channel.send(`Obtendo Resultados`).then(msg =>{
 setTimeout(()=>{msg.edit("Processando Resultado")},4000)
 let id=[],rep=[],cont=0;let y=[]
-client.users.map(x =>{
+client.users.cache.map(x =>{
 Database.Membros.findOne({membroid: x.id}, function(erro, dados) {   
 if(dados){
 id.push(x.id)
 rep.push(dados.rep)
 cont++;
-y.push({"nome": client.users.get(dados.membroid).username,"rep":dados.rep})
+y.push({"nome": client.users.cache.get(dados.membroid).username,"rep":dados.rep})
 }
 })
 })
 setTimeout(() =>{
 y.sort((b, a) => a.rep - b.rep);
-let embed = new Discord.RichEmbed()
+let embed = new MessageEmbed()
 .setTitle("Rank Reputações")
 .setColor("RED")
 .setTimestamp()

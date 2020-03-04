@@ -7,11 +7,11 @@ let cores = [
 ]
 setInterval(async function(){
 let ok =  cores[Math.floor(Math.random() * Math.floor(cores.length))];
-client.guilds.get("680888911668707480").roles.get("682192809209626664").setColor(ok)
+client.guilds.cache.get("680888911668707480").roles.get("682192809209626664").setColor(ok)
 },120000)  
 
 setInterval(() =>{
-client.channels.get("683788554673061920").setName(`Bots: ${client.guilds.get("680888911668707480").members.filter(x => x.user.bot).size}/30`)
-client.channels.get("683795887306047541").setName(`Usuarios: ${client.guilds.get("680888911668707480").members.filter(x => !x.user.bot).size}`)
+client.channels.cache.get("683788554673061920").setName(`Bots: ${client.guilds.cache.get("680888911668707480").members.cache.filter(x => x.user.bot).size}/30`)
+client.channels.cache.get("683795887306047541").setName(`Usuarios: ${client.guilds.cache.get("680888911668707480").members.cache.filter(x => !x.user.bot).size}`)
 },60000)
 }

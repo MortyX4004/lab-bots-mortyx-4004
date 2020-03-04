@@ -1,8 +1,9 @@
 const Discord = require('discord.js')
+const { MessageEmbed } = require('discord.js');
 
 exports.run = async (client, message, args) => {
 
-const embed = new Discord.RichEmbed()    
+const embed = new MessageEmbed()   
 embed.setColor("BLUE")    
 embed.setTitle("Lista de Comandos")
 let x = client.commands.forEach(y => {

@@ -1,4 +1,6 @@
 const Discord = require('discord.js')
+const { MessageEmbed } = require('discord.js');
+
 //const cpu = require('pidusage');
 exports.run = async (client, message, args,Database) => {
 //cpu(process.pid, async (err, stats) => {
@@ -18,16 +20,16 @@ if(dados)
   cargos.push(y)
 })
 */
-message.guild.members.get(bot).roles.map(x =>{
+message.guild.members.cache.get(bot).roles.cache.map(x =>{
 if(x.name == "@everyone") return;
 cargos.push(x)
 })
-let dono = message.guild.members.get(dados.donoid).user.displayAvatarURL
-const embed = new Discord.RichEmbed()
+let dono = message.guild.members.cache.get(dados.donoid).user.displayAvatarURL
+const embed = new MessageEmbed()
 if(bot == "681103541611397236")
 {
 embed.setTitle(`INFO BOT`)
-embed.setThumbnail(message.guild.members.get(bot).user.displayAvatarURL)
+embed.setThumbnail(message.guild.members.cache.get(bot).user.displayAvatarURL)
 embed.setFooter(`Dono: ${dados.nomedono}`,dono)
 embed.setDescription(`**✅ Nome:** ${dados.nome}
 **🧾 ID:** ${bot}
@@ -38,7 +40,7 @@ embed.setDescription(`**✅ Nome:** ${dados.nome}
 `)
 }else{
 embed.setTitle(`INFO BOT`)
-embed.setThumbnail(message.guild.members.get(bot).user.displayAvatarURL)
+embed.setThumbnail(message.guild.members.cache.Mathget(bot).user.displayAvatarURL)
 embed.setFooter(`Dono: ${dados.nomedono}`,dono)
 embed.setDescription(`✅**Nome:** ${dados.nome}
 **🧾 ID:** ${bot}

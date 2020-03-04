@@ -1,4 +1,5 @@
 const Discord = require('discord.js')
+const { MessageEmbed } = require('discord.js');
 
 let codigos = [
     {"nome": "message.channel",
@@ -8,7 +9,7 @@ exports.run = async (client, message, args) => {
 if(!args[0]) return message.reply("❌ | Voce nao Especificou uma Propriedade")
 codigos.map(x =>{
     if(x.nome != args) return message.reply("⚠️ | Nao encotrei essa Propriedade!")
-    let cmd = new Discord.RichEmbed()
+    let cmd = new MessageEmbed()
     .setTitle("Javascript Command")
     .setDescription(`Nome: ${x.nome}
     Propriedades: ${x.Propriedades}`)
