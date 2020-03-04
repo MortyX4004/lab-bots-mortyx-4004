@@ -29,7 +29,7 @@ fs.readdir("./comandos/", (err, files) => {
 client.login(config.bot1)
 let dia = agora.date();
 setInterval(()=>{
-client.guilds.get("680888911668707480").members.map( x =>{
+client.guilds.cache.get("680888911668707480").members.cache.map( x =>{
 if(x.user.bot)
 {
 Database.Bots.findOne({idbot: x.user.id}, async function(erro, dados) {   
@@ -46,7 +46,7 @@ if(result == 3){
 })
 },240000)
 setInterval(() =>{
-client.guilds.get("680888911668707480").members.map( a =>{
+client.guilds.cache.get("680888911668707480").members.cache.map( a =>{
 if(a.user.bot)
 if(a.presence.status == "offline"){
 Database.Bots.findOne({idbot: a.user.id}, function(erro, dados) {   

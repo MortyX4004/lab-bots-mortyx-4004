@@ -7,7 +7,7 @@ let cores = [
 ]
 setInterval(async function(){
 let ok =  cores[Math.floor(Math.random() * Math.floor(cores.length))];
-client.guilds.cache.get("680888911668707480").roles.get("682192809209626664").setColor(ok)
+client.guilds.cache.get("680888911668707480").roles.cache.get("682192809209626664").setColor(ok)
 },120000)  
 
 setInterval(() =>{
