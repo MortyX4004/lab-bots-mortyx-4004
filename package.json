@@ -1,0 +1,22 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "fs": "^0.0.1-security",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.2",
+    "pidusage": "^2.0.18",
+    "request": "^2.88.2",
+    "util": "^0.12.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
