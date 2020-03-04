@@ -5,7 +5,7 @@ const fs = require("fs");
 const Database = require("./Data/database.js")
 const moment = require("moment")
 const agora = moment();
-const config = require("./config.json")
+const config = require("./configs/config.json")
 client.commands = new Discord.Collection();
 //Carregamento dos Eventos
 const evtFiles = readdirSync('./eventos/')
@@ -27,7 +27,7 @@ fs.readdir("./comandos/", (err, files) => {
     });
   });  
 client.login(config.bot1)
-
+console.log(config.bot1)
 let dia = agora.date();
 setInterval(()=>{
 client.guilds.get("680888911668707480").members.map( x =>{
