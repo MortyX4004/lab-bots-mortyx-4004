@@ -27,7 +27,6 @@ fs.readdir("./comandos/", (err, files) => {
     });
   });  
 client.login(config.bot1)
-console.log(config.bot1)
 let dia = agora.date();
 setInterval(()=>{
 client.guilds.get("680888911668707480").members.map( x =>{

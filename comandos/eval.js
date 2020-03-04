@@ -2,7 +2,6 @@ const Discord = require('discord.js')
 const { inspect } = require('util');
 const fs = require('fs');
 const { createWriteStream } = require('fs');
-const request = require('request');
 const data = new Date();
 const moment = require("moment")
 const agora = moment();

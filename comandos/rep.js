@@ -9,7 +9,8 @@ if(dados){
 Database.Membros.findOne({membroid: message.author.id}, function(erro, valor) {   
 if(valor){      
 let array = valor.reputou;
-if(array.indexOf(membro.id) > -1)
+if(array.indexOf(memb
+  ro.id) > -1)
 {message.reply("Voce ja reputou esse Membro")}else{
 valor.reputou.push(membro.id) 
 valor.save()  
