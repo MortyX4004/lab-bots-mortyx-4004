@@ -40,7 +40,7 @@ embed.setDescription(`**✅ Nome:** ${dados.nome}
 `)
 }else{
 embed.setTitle(`INFO BOT`)
-embed.setThumbnail(message.guild.members.cache.Mathget(bot).user.displayAvatarURL)
+embed.setThumbnail(message.guild.members.cache.get(bot).user.displayAvatarURL)
 embed.setFooter(`Dono: ${dados.nomedono}`,dono)
 embed.setDescription(`✅**Nome:** ${dados.nome}
 **🧾 ID:** ${bot}

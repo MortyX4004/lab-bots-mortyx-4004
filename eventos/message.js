@@ -4,7 +4,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = async (client, message) => {
 
   if(message.author.bot) return;
-  if(message.channel.type === "dm") return client.channels.get("681798419907739674").send(` ${message.author.username} Falou pro Bot: ${message.content}`);       
+  if(message.channel.type === "dm") return client.channels.cache.get("681798419907739674").send(` ${message.author.username} Falou pro Bot: ${message.content}`);       
   Database.Membros.findOne({membroid: message.author.id}, function(erro, dados) {   
   if(dados)
   {

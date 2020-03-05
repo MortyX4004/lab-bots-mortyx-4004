@@ -7,8 +7,8 @@ const moment = require("moment")
 const agora = moment();
 const config = require("./configs/config.json")
 client.commands = new Discord.Collection();
-//Carregamento dos Eventos
 const evtFiles = readdirSync('./eventos/')
+
 console.log('log', `Carregando o total de ${evtFiles.length} eventos`)
 evtFiles.forEach(f => {
 const eventName = f.split('.')[0]
@@ -27,9 +27,10 @@ fs.readdir("./comandos/", (err, files) => {
     });
   });  
 client.login(config.bot1)
+/*
 let dia = agora.date();
 setInterval(()=>{
-client.guilds.cache.get("680888911668707480").members.cache.map( x =>{
+client.guilds.get("680888911668707480").members.cache.map( x =>{
 if(x.user.bot)
 {
 Database.Bots.findOne({idbot: x.user.id}, async function(erro, dados) {   
@@ -46,7 +47,7 @@ if(result == 3){
 })
 },240000)
 setInterval(() =>{
-client.guilds.cache.get("680888911668707480").members.cache.map( a =>{
+client.guilds.get("680888911668707480").members.cache.map( a =>{
 if(a.user.bot)
 if(a.presence.status == "offline"){
 Database.Bots.findOne({idbot: a.user.id}, function(erro, dados) {   
@@ -58,3 +59,4 @@ dados.save();
 }
 })
 },86400000)
+*/

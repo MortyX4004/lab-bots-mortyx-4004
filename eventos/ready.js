@@ -11,7 +11,7 @@ client.guilds.cache.get("680888911668707480").roles.cache.get("68219280920962666
 },120000)  
 
 setInterval(() =>{
-client.channels.cache.get("683788554673061920").setName(`Bots: ${client.guilds.cache.get("680888911668707480").members.cache.filter(x => x.user.bot).size}/30`)
-client.channels.cache.get("683795887306047541").setName(`Usuarios: ${client.guilds.cache.get("680888911668707480").members.cache.filter(x => !x.user.bot).size}`)
-},60000)
+//client.channels.cache.get("683788554673061920").setName(`Bots: ${client.guilds.cache.members.cache.filter(x => x.user.bot).size}/30`)
+//client.channels.cache.get("683795887306047541").setName(`Usuarios: ${client.guilds.cache.members.cache.filter(x => !x.user.bot).size}`)
+},99999999)
 }
