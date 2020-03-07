@@ -4,6 +4,7 @@ const { MessageEmbed } = require('discord.js');
 exports.run = async (client, message, args , Database) => {
 if(!args[0]) return message.reply("Mencione um Membro")
 let membro = message.mentions.members.first()
+if(!membro) return message.reply("Membro Invalido")
 if(membro.id == message.author.id) return message.reply("Quer Reputar voce mesmo?")
 Database.Membros.findOne({membroid: membro.id}, function(erro, dados) {   
 if(dados){
@@ -18,6 +19,19 @@ dados.rep += 1;
 dados.save()
 message.channel.send(`Agora o Membro ${membro} Possui ${dados.rep} Reputações`)
 }
+}
+else{
+  new Database.Membros({
+    membroid: message.author.id,
+    xp: 0,
+    level: 0,
+    rep: 0
+    }).save() 
+    message.channel.send(`Agora o Membro ${membro} Possui ${dados.rep} Reputações`)
+    valor.reputou.push(membro.id) 
+    valor.save()  
+    dados.rep += 1;
+    dados.save()    
 }
 })
 }else{

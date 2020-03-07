@@ -2,6 +2,7 @@ const Discord = require ('discord.js')
 const { MessageEmbed } = require('discord.js');
 
 exports.run = async (client, message, args , Database) => {
+if(message.author.id != "665200472596152341") return message.reply("Voce nao pode usar esse comando")
 let max = 0;
 let mencao = message.mentions.members.first();
 if(!mencao) return message.reply("Usuario Invalido")
@@ -14,6 +15,12 @@ message.channel.send(`O Usuario ${mencao.user.username} Acaba de Adquirir VIP`)
     await x.updateOverwrite(message.guild.roles.cache.get('682192809209626664').id, {
     'VIEW_CHANNEL':false     
     })
+    await x.updateOverwrite(message.guild.roles.cache.get('681230712430395405').id, {
+    'VIEW_CHANNEL':false     
+    })    
+    x.updateOverwrite(message.guild.roles.cache.get('680888911668707480'), {
+     'VIEW_CHANNEL': false     
+    })    
     await x.updateOverwrite(mencao.user.id, {
         'VIEW_CHANNEL': true,
           'SEND_MESSAGES': true
@@ -23,6 +30,21 @@ message.channel.send(`O Usuario ${mencao.user.username} Acaba de Adquirir VIP`)
         {
             dados.salavip = x.id;
             dados.save();
+            Database.Bots.findOne({donoid: mencao.user.id}, async function(erro, valor) {   
+            if(valor){
+                await x.updateOverwrite(message.guild.members.cache.get(valor.idbot).id, {
+                    'VIEW_CHANNEL': true,
+                      'SEND_MESSAGES': true
+                });   
+            let cvip = await message.guild.roles.cache.get("685230453271298122")
+            message.guild.members.cache.get(valor.idbot).roles.add(cvip.id)
+            let ide = await message.guild.roles.cache.get(valor.idbot)
+            if(!ide){
+            let newcargo = message.guild.roles.create(valor.idbot)
+            message.guild.members.cache.get(valor.idbot).roles.add(newcargo.id)
+            }
+            }
+        })
         }
     })
 })
