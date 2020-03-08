@@ -9,12 +9,17 @@
   "author": "morty",
   "license": "ISC",
   "dependencies": {
+    "cpuid-git": "^0.3.1",
     "discord.js": "^12.0.1",
     "ffmpeg": "0.0.4",
+    "free-memory": "^1.0.0",
     "fs": "0.0.1-security",
     "moment": "^2.24.0",
     "mongoose": "^5.9.3",
-    "pidusage": "^2.0.18"
+    "pidusage": "^2.0.18",
+    "systeminformation": "^4.22.5",
+    "use-max-cpu": "^2.0.0",
+    "windows-cpu": "^1.1.0"
   },
   "devDependencies": {},
   "description": ""

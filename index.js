@@ -8,7 +8,7 @@ const agora = moment();
 const config = require("./configs/config.json")
 client.commands = new Discord.Collection();
 const evtFiles = readdirSync('./eventos/')
-
+const si = require('systeminformation');
 console.log('log', `Carregando o total de ${evtFiles.length} eventos`)
 evtFiles.forEach(f => {
 const eventName = f.split('.')[0]
@@ -26,7 +26,7 @@ fs.readdir("./comandos/", (err, files) => {
          props);
     });
   });  
-client.login(config.bot1)
+client.login(config.bot2)
 /*
 let dia = agora.date();
 setInterval(()=>{
