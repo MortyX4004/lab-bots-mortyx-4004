@@ -1,4 +1,5 @@
 const Discord = require ('discord.js')
+const {version} = require ('discord.js')
 const { MessageEmbed } = require('discord.js');
 const si = require('systeminformation');
 const cpu = require('pidusage');
@@ -14,6 +15,8 @@ const embed = new MessageEmbed()
 **Socket:** ${data.socket}
 **Memoria em Uso:** ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB
 **Uso CPU:** ${Math.round(stats.cpu)}%
+**Node.js:** ${process.version}
+**Discord JS:** v${version}
 `)
 message.channel.send(embed)
 })
