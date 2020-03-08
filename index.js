@@ -26,7 +26,7 @@ fs.readdir("./comandos/", (err, files) => {
          props);
     });
   });  
-client.login(config.bot2)
+client.login(config.bot1)
 /*
 let dia = agora.date();
 setInterval(()=>{
