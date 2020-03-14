@@ -35,18 +35,14 @@ if(cont >= 10){
             if(i == 2){
             embed.addField(`🥉 TOP 3 `,`${y[i].nome} ( **${y[i].rep}** )`) 
             i++;
-            }                 
-            if(y[i])
-            { 
-            if(i == 3){embed.addField(`🏅 TOP 4 `, `${y[i].nome} ( **${y[i].rep}** )`) ;}
-            if(i == 4){embed.addField(`🏅 TOP 5 `, `${y[i].nome} ( **${y[i].rep}** )`) ;}     
-            if(i == 5){embed.addField(`🏅 TOP 6 `, `${y[i].nome} ( **${y[i].rep}** )`) ;}     
-            if(i == 6){embed.addField(`🏅 TOP 7 `, `${y[i].nome} ( **${y[i].rep}** )`) ;}     
-            if(i == 7){embed.addField(`🏅 TOP 8 `, `${y[i].nome} ( **${y[i].rep}** )`) ;}     
-            if(i == 8){embed.addField(`🏅 TOP 9 `, `${y[i].nome} ( **${y[i].rep}** )`) ;}     
-            if(i == 9){embed.addField(`🏅 TOP 10`, `${y[i].nome} ( **${y[i].rep}** )`) ;}          
-            i++;
-            }        
+            }                       
+            if(i == 3){embed.addField(`🏅 TOP 4 `, `${y[i].nome} ( **${y[i].rep}** )`);i++;}
+            if(i == 4){embed.addField(`🏅 TOP 5 `, `${y[i].nome} ( **${y[i].rep}** )`) ;i++;}     
+            if(i == 5){embed.addField(`🏅 TOP 6 `, `${y[i].nome} ( **${y[i].rep}** )`) ;i++;}     
+            if(i == 6){embed.addField(`🏅 TOP 7 `, `${y[i].nome} ( **${y[i].rep}** )`) ;i++;}     
+            if(i == 7){embed.addField(`🏅 TOP 8 `, `${y[i].nome} ( **${y[i].rep}** )`) ;i++;}     
+            if(i == 8){embed.addField(`🏅 TOP 9 `, `${y[i].nome} ( **${y[i].rep}** )`) ;i++;}     
+            if(i == 9){embed.addField(`🏅 TOP 10`, `${y[i].nome} ( **${y[i].rep}** )`) ;i++;}                                         
     }
     msg.edit(embed)
 }
