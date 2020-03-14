@@ -26,13 +26,7 @@ module.exports = async (client, message) => {
   let texto = message.content;
   if(texto.indexOf("<") > -1)
   {}else{    
- /* await message.react("✖️");await message.react("✔️")                
-    new Database.Sugestao({
-      indice: message.author.id,
-      nome: message.author.username,      
-      sugestao: message.content
-      }).save()  
-      */
+  await message.react("✖️");await message.react("✔️")                
   }
   }
   if(message.channel.id != "681503728792371233")
